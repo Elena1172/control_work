@@ -28,7 +28,15 @@ void ShuffleEl(string[] array){
         array[j] = temp;
     }
 }
-
+string[] FillAr2(string[]array){
+    int n = new Random().Next(4);
+    string[] newtext = new string[n];
+    for (int i = 0; i < newtext.Length; i++)
+    {
+        newtext[i] = array[i];
+    }
+    return newtext;
+}
 Console.WriteLine("Введите количество элементов массива натуральным числом больше 3 ");
 int n = Convert.ToInt32(Console.ReadLine());
 if(n < 4) Console.Write("Неправильный ввод данных");
@@ -37,6 +45,7 @@ else
    string[] txt = FillAr(n);
     PrintArray(txt);
     ShuffleEl(txt);
-    Console.WriteLine();
-    PrintArray(txt);
+    string[] newtxt = FillAr2(txt);
+    Console.Write(" -> ");
+    PrintArray(newtxt);
 }
